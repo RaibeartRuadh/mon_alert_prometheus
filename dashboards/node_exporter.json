@@ -468,7 +468,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": true,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -505,8 +505,8 @@
       "15d"
     ]
   },
-  "timezone": "",
+  "timezone": "browser",
   "title": "RaibeartRuadh Dashboard",
-  "uid": "6yE_zPTmk",
+  "uid": "WeWillSurvice",
   "version": 2
 }
