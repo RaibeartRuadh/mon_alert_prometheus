@@ -1,0 +1,23 @@
+---
+- name: Monitoring
+  hosts: all
+  gather_facts: false
+  roles:
+    - role: RaibeartRuadh.prometheus
+      prometheus_version: 2.22.0
+      prometheus_jobs:
+        - name: node-prometheus
+          static_configs:
+            targets:
+              - 'localhost:9090'
+              - 'localhost:9100'
+    - role: RaibeartRuadh.node_exporter
+      node_exporter_version: 1.0.1
+    - role: RaibeartRuadh.grafana
+      grafana_datasources:
+        - name: prometheus
+          type: prometheus
+          url: "http://localhost:9090"
+      grafana_dashboards:
+        - name: node_exporter
+          file: dashboards/node_exporter.json
